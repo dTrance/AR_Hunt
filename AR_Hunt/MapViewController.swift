@@ -22,15 +22,64 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
 class MapViewController: UIViewController {
 
   @IBOutlet weak var mapView: MKMapView!
+  var targets = [ARItem]()
+  let locationManager = CLLocationManager()
+  var userLocation: CLLocation?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
+    setupLocations()
+    
+    if CLLocationManager.authorizationStatus() == .notDetermined {
+      locationManager.requestWhenInUseAuthorization()
+    }
+  }
+  
+  func setupLocations() {
+    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.791169))
+    targets.append(firstTarget)
+    
+    let secondTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.792169))
+    targets.append(secondTarget)
+    
+    let thirdTarget = ARItem(itemDescription: "dragon", location: CLLocation(latitude: 26.633949, longitude: -81.793369))
+    targets.append(thirdTarget)
+    
+    for item in targets {
+      let annotation = MapAnnotation(location: item.location.coordinate, item: item)
+      self.mapView.addAnnotation(annotation)
+    }
+  }
+  
+}
+
+extension MapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+    self.userLocation = userLocation.location
+  }
+  
+  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    let coordinate = view.annotation!.coordinate
+    
+    if let userCoordinate = userLocation {
+      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 50 {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ViewController {
+          
+          if let mapAnnotation = view.annotation as? MapAnnotation {
+            self.present(viewController, animated: true, completion: nil)
+          }
+        }
+      }
+    }
   }
 }

@@ -17,6 +17,7 @@
 		8FB21D961E13DEA200B3E330 /* Fireball.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D941E13DEA200B3E330 /* Fireball.scnp */; };
 		8FB21D971E13DEA200B3E330 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D951E13DEA200B3E330 /* spark.png */; };
 		F09DFEC31E6512E600C9A48F /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09DFEC21E6512E600C9A48F /* ARItem.swift */; };
+		F09DFEC51E6516F700C9A48F /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09DFEC41E6516F700C9A48F /* MapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8FB21D941E13DEA200B3E330 /* Fireball.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Fireball.scnp; sourceTree = "<group>"; };
 		8FB21D951E13DEA200B3E330 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		F09DFEC21E6512E600C9A48F /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
+		F09DFEC41E6516F700C9A48F /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */,
 				8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */,
+				F09DFEC41E6516F700C9A48F /* MapAnnotation.swift */,
 				F09DFEC21E6512E600C9A48F /* ARItem.swift */,
 				8FB21D7C1E13C34900B3E330 /* ViewController.swift */,
 				8FB21D7E1E13C34900B3E330 /* Main.storyboard */,
@@ -113,6 +116,7 @@
 				TargetAttributes = {
 					8FB21D761E13C34900B3E330 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8TUF73A8Z9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -157,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FB21D7D1E13C34900B3E330 /* ViewController.swift in Sources */,
+				F09DFEC51E6516F700C9A48F /* MapAnnotation.swift in Sources */,
 				F09DFEC31E6512E600C9A48F /* ARItem.swift in Sources */,
 				8FB21D8F1E13C39F00B3E330 /* MapViewController.swift in Sources */,
 				8FB21D7B1E13C34900B3E330 /* AppDelegate.swift in Sources */,
@@ -280,10 +285,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TUF73A8Z9;
 				INFOPLIST_FILE = AR_Hunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.AR-Hunt";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TranceApps.AR-Hunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -293,10 +298,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TUF73A8Z9;
 				INFOPLIST_FILE = AR_Hunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.AR-Hunt";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TranceApps.AR-Hunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

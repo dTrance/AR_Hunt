@@ -44,13 +44,13 @@ class MapViewController: UIViewController {
   }
   
   func setupLocations() {
-    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.791169))
+    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.791169), itemNode: nil)
     targets.append(firstTarget)
     
-    let secondTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.792169))
+    let secondTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 26.633949, longitude: -81.792169), itemNode: nil)
     targets.append(secondTarget)
     
-    let thirdTarget = ARItem(itemDescription: "dragon", location: CLLocation(latitude: 26.633949, longitude: -81.793369))
+    let thirdTarget = ARItem(itemDescription: "dragon", location: CLLocation(latitude: 26.633949, longitude: -81.793369), itemNode: nil)
     targets.append(thirdTarget)
     
     for item in targets {
@@ -76,6 +76,7 @@ extension MapViewController: MKMapViewDelegate {
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ViewController {
           
           if let mapAnnotation = view.annotation as? MapAnnotation {
+            viewController.target = mapAnnotation.item
             self.present(viewController, animated: true, completion: nil)
           }
         }
